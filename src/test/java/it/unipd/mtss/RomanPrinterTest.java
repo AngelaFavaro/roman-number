@@ -24,6 +24,23 @@ public class RomanPrinterTest {
     }
 
     @Test
+    public void testPrintNumeriFinoA6() {
+        // Arrange
+        int[] inputs = {4, 5, 6};
+        String[] expectedOutputs = {
+            "  _____  __      __\n |_   _| \\ \\    / /\n   | |    \\ \\  / / \n   | |     \\ \\/ /  \n  _| |_     \\  /   \n |_____|     \\/    \n",
+            " __      __\n \\ \\    / /\n  \\ \\  / / \n   \\ \\/ /  \n    \\  /   \n     \\/    \n",
+            " __      __  _____ \n \\ \\    / / |_   _|\n  \\ \\  / /    | |  \n   \\ \\/ /     | |  \n    \\  /     _| |_ \n     \\/     |_____|\n",
+        };
+
+        // Act & Assert
+        for (int i = 0; i < inputs.length; i++) {
+            String result = RomanPrinter.print(inputs[i]);
+            assertEquals(expectedOutputs[i], result);
+        }
+    }
+
+    @Test
     public void testNumeroTroppoPiccolo() {
         // Arrange
         int invalidInput = 0;
@@ -36,7 +53,7 @@ public class RomanPrinterTest {
     @Test
     public void testNumeroTroppoGrande() {
         // Arrange
-        int invalidInput = 4;
+        int invalidInput = 7;
 
         // Act & Assert
         Exception e = assertThrows(IllegalArgumentException.class, () -> RomanPrinter.print(invalidInput));

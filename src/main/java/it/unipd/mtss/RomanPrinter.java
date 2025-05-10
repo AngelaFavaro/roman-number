@@ -15,33 +15,33 @@ public class RomanPrinter {
         StringBuilder asciiArt = new StringBuilder();
         String[][] asciiLetters = {
             {
-                "  _____ " 
+                " __      __", "  _____ " 
             },
 
             {
-                " |_   _|"
+                " \\ \\    / /", " |_   _|"
             },
 
             {
-                "   | |  "
+                "  \\ \\  / / ", "   | |  "
             },
 
             {
-                "   | |  " 
+                "   \\ \\/ /  ", "   | |  " 
             },
 
             {
-                "  _| |_ "
+                "    \\  /   ", "  _| |_ "
             }, 
 
             {
-                " |_____|"
+                "     \\/    ", " |_____|"
             },
         };
         
         for(int z=0; z<6; z++) {
             for (char c : romanNumber.toCharArray()) {
-                asciiArt.append(asciiLetters[z]["I".indexOf(c)]);
+                asciiArt.append(asciiLetters[z]["VI".indexOf(c)]);
             }
             asciiArt.append("\n");
         }
