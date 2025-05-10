@@ -86,10 +86,23 @@ public class IntegerToRomanTest {
         }
     }
 
+    @Test
+    public void testConvertFinoA500() {
+        // Arrange
+        int[] inputs = {200, 300, 400, 500};
+        String[] expected = {"CC", "CCC", "CD", "D"};
+
+        // Act & Assert
+        for (int i = 0; i < inputs.length; i++) {
+            String result = IntegerToRoman.convert(inputs[i]);
+            assertEquals(expected[i], result);
+        }
+    }
+
      @Test
     public void testConvertiNumeroTroppoGrande() {
         // Arrange
-        int input = 101;
+        int input = 501;
 
         // Act & Assert
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -98,6 +111,7 @@ public class IntegerToRomanTest {
 
         assertEquals("Non valido", exception.getMessage());
     }
+    
 
     @Test
     public void testConvertiZero() {
@@ -115,10 +129,10 @@ public class IntegerToRomanTest {
     @Test
     public void testRomanOutputContainsOnlyValidCharacters() {
         // Arrange
-        String validChars = "CLXVI";
+        String validChars = "DCLXVI";
 
         // Act & Assert
-        for (int i = 1; i <= 100; i++) {
+        for (int i = 1; i <= 500; i++) {
             String roman = IntegerToRoman.convert(i);
             for (char c : roman.toCharArray()) {
                 assertTrue(validChars.indexOf(c) >= 0,
