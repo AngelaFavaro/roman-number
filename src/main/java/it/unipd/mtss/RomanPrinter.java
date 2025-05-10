@@ -15,34 +15,34 @@ public class RomanPrinter {
         StringBuilder asciiArt = new StringBuilder();
         String[][] asciiLetters = {
             {
-                "  _____  ",  
+                "  __  __ ", "  _____  ",  
                 "   _____ ", "  _      ", " __   __", " __      __", "  _____ " 
             },
             {
-                " |  __ \\ ",  
+                " |  \\/  |", " |  __ \\ ",  
                 "  / ____|", " | |     ", " \\ \\ / /", " \\ \\    / /", " |_   _|"
             },
             {
-                " | |  | |",  
+                " | \\  / |",  " | |  | |",  
                 " | |     ", " | |     ", "  \\ V / ", "  \\ \\  / / ", "   | |  "
             },
             {
-                " | |  | |", 
+                " | |\\/| |", " | |  | |", 
                 " | |     ", " | |     ", "   > <  ", "   \\ \\/ /  ", "   | |  " 
             },
             {
-                " | |__| |", 
+                " | |  | |", " | |__| |", 
                 " | |____ ", " | |____ ", "  / . \\ ", "    \\  /   ", "  _| |_ "
             }, 
             {
-                " |_____/ ", 
+                " |_|  |_|", " |_____/ ", 
                 "  \\_____|", " |______|", " /_/ \\_\\", "     \\/    ", " |_____|"
             },
         };
         
         for(int z=0; z<6; z++) {
             for (char c : romanNumber.toCharArray()) {
-                asciiArt.append(asciiLetters[z]["DCLXVI".indexOf(c)]);
+                asciiArt.append(asciiLetters[z]["MDCLXVI".indexOf(c)]);
             }
             asciiArt.append("\n");
         }
