@@ -93,6 +93,25 @@ public class RomanPrinterTest {
     }
 
     @Test
+    public void testPrintNumeriFinoA100() {
+        // Arrange
+        int[] inputs = {60, 70, 80, 90, 100};
+        String[] expected = {
+            "  _       __   __\n | |      \\ \\ / /\n | |       \\ V / \n | |        > <  \n | |____   / . \\ \n |______| /_/ \\_\\\n",
+            "  _       __   __ __   __\n | |      \\ \\ / / \\ \\ / /\n | |       \\ V /   \\ V / \n | |        > <     > <  \n | |____   / . \\   / . \\ \n |______| /_/ \\_\\ /_/ \\_\\\n",
+            "  _       __   __ __   __ __   __\n | |      \\ \\ / / \\ \\ / / \\ \\ / /\n | |       \\ V /   \\ V /   \\ V / \n | |        > <     > <     > <  \n | |____   / . \\   / . \\   / . \\ \n |______| /_/ \\_\\ /_/ \\_\\ /_/ \\_\\\n",
+            " __   __   _____ \n \\ \\ / /  / ____|\n  \\ V /  | |     \n   > <   | |     \n  / . \\  | |____ \n /_/ \\_\\  \\_____|\n",
+            "   _____ \n  / ____|\n | |     \n | |     \n | |____ \n  \\_____|\n"
+        };
+
+        // Act & Assert
+        for (int i = 0; i < inputs.length; i++) {
+            String result = RomanPrinter.print(inputs[i]);
+            assertEquals(expected[i], result);
+        }
+    }
+
+    @Test
     public void testNumeroTroppoPiccolo() {
         // Arrange
         int invalidInput = 0;
@@ -105,7 +124,7 @@ public class RomanPrinterTest {
     @Test
     public void testNumeroTroppoGrande() {
         // Arrange
-        int invalidInput = 51;
+        int invalidInput = 101;
 
         // Act & Assert
         Exception e = assertThrows(IllegalArgumentException.class, () -> RomanPrinter.print(invalidInput));
