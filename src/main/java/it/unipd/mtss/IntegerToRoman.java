@@ -7,12 +7,12 @@ package it.unipd.mtss;
 
 public class IntegerToRoman {
     public static String convert(int number) {
-        if (number < 1 || number > 6) {
+        if (number < 1 || number > 10) {
             throw new IllegalArgumentException("Non valido");
         }
 
-        String[] romanLetters = {"V", "IV", "I"};
-        int[] values = {5, 4, 1};
+        String[] romanLetters = {"X", "IX", "V", "IV", "I"};
+        int[] values = {10, 9, 5, 4, 1};
 
         StringBuilder romanNumber = new StringBuilder();
 
