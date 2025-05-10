@@ -47,10 +47,23 @@ public class IntegerToRomanTest {
         }
     }
 
+    @Test
+    public void testConvertFinoA20() {
+        // Arrange
+        int[] inputs = {15, 19, 20};
+        String[] expected = {"XV", "XIX", "XX"};
+
+        // Act & Assert
+        for (int i = 0; i < inputs.length; i++) {
+            String result = IntegerToRoman.convert(inputs[i]);
+            assertEquals(expected[i], result);
+        }
+    }
+
      @Test
     public void testConvertiNumeroTroppoGrande() {
         // Arrange
-        int input = 11;
+        int input = 21;
 
         // Act & Assert
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
@@ -79,7 +92,7 @@ public class IntegerToRomanTest {
         String validChars = "XVI";
 
         // Act & Assert
-        for (int i = 1; i <= 10; i++) {
+        for (int i = 1; i <= 20; i++) {
             String roman = IntegerToRoman.convert(i);
             for (char c : roman.toCharArray()) {
                 assertTrue(validChars.indexOf(c) >= 0,
